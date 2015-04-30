@@ -1,0 +1,24 @@
+{
+	"class": [
+		"full", // full, small, film
+		"side", // side, center, background
+		"dark" // light, dark
+	],
+	"title": "",
+	"date": "",
+	"content": "",
+	"links": [
+		{
+			"name": "",
+			"url": ""
+		},
+		{
+			"name": "",
+			"url": ""
+		},
+	],
+	"custom": {
+		"titleColor": "",
+		"buttonColor": ""
+	} 
+}

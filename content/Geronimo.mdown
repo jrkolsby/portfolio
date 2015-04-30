@@ -1,8 +1,17 @@
+<!-- 
+{
+	"date": "",
+	"type": "large-side",
+	"hide_title": false,
+	"color_title": false,
+	"color_links": "20B9EB"
+}
+-->
+
 Geronimo
 ===============
-###4/23/15
 
 I made a movie, it is called `Geronimo`
 
-* [Vimeo](https://vimeo.com/121205149)
-* [Dropbox](https://www.dropbox.com/s/0ysjmoykqeupdb9/A%20Day%20in%20the%20Life.mpeg?dl=0)
+[Vimeo](https://vimeo.com/121205149)
+[Dropbox](https://www.dropbox.com/s/0ysjmoykqeupdb9/A%20Day%20in%20the%20Life.mpeg?dl=0)

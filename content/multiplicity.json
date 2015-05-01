@@ -1,23 +1,24 @@
 {
-	"class": [
-		"full", // full, small, film
-		"background", // side, center, background
-		"light" // light, dark
-	],
-	"title": "Multiplicity",
-	"date": "20141112",
-	"content": "The greatest breakthrough in mathematical computation since the abacus, in your browser.",
-	"links": [
-		{
-			"name": "Webapp",
-			"url": "http://jmkl.co/multiplicity/"
-		},
-		{
-			"name": "Github",
-			"url": "https://github.com/jrkolsby/Multiplicity"
-		},
-	],
-	"titleColor": "508BFA",
-	"buttonColor": false,
-	"backgroundRepeat": false
+    "appearance": {
+        "class": [
+            "background",
+            "light"
+        ],
+        "backgroundRepeat": false,
+        "noTitle": false,
+        "titleColor": "508BFA",
+        "buttonColor": false
+    },
+    "title": "Multiplicity",
+    "tag": "The greatest breakthrough in mathematical computation since the abacus, in your browser.",
+    "links": [
+        {
+            "name": "Webapp",
+            "url": "http://jmkl.co/multiplicity/"
+        },
+        {
+            "name": "Github",
+            "url": "https://github.com/jrkolsby/Multiplicity"
+        }
+    ]
 }

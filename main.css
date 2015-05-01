@@ -57,7 +57,8 @@ article h1 {
 	font-weight: 400;
 	line-height: 130%;
 }
-article h2 {
+article h2,
+article p {
 	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 	font-weight: 300;
 	line-height: 166%;
@@ -289,7 +290,7 @@ section.part article.active div:last-child {
 	max-height: 600px;
 	padding: 30px;
 }
-section.part article h2 {
+section.part article p {
 	color: #333;
 	margin-bottom: 30px;
 	font-size: 1em;

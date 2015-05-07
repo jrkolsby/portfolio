@@ -216,8 +216,8 @@ section.part article {
 	background: #fff;
 	float: left;
 }
-article.small:nth-last-of-type(2n) {
-	margin-right: 50px;
+section.part article.small.margin {
+	margin-right: 50px; /* ARRRGGHHHHHHHHH */
 }
 section.part article div:first-child {
 	display: table;

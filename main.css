@@ -216,7 +216,7 @@ section.part article {
 	background: #fff;
 	float: left;
 }
-section.part article.small:nth-of-type(2n) {
+article.small:nth-last-of-type(2n) {
 	margin-right: 50px;
 }
 section.part article div:first-child {
@@ -298,6 +298,7 @@ section.part article p {
 section.part article a button {
 	color: #111;
 	border: 2px solid #111;
+	margin-right: 20px;
 }
 
 
@@ -340,11 +341,11 @@ article.full .inner .info {
 	vertical-align: middle;
 }
 article.full h1 {
-	font-size: 3em;
+	font-size: 3.8em;
 	margin-bottom: 15px;
 }
 article.full h2 {
-	font-size: 1em;
+	font-size: 1.1em;
 	margin-bottom: 30px;
 }
 article.full a button {
@@ -395,7 +396,6 @@ article.full.side .inner img {
 
 }
 
-
 /* Large Article Background */
 
 /* Retina Declarations */
@@ -409,6 +409,6 @@ article.full.side .inner img {
 		background: url('assets/icons/arrow-black@2x.png') 0 0 / 8px 12px;
 	}
 	article.full.dark a button::after {
-		background: url('assets/icons/arrow@2x.png');	
+		background: url('assets/icons/arrow@2x.png') 0 0 / 8px 12px;	
 	}
 }

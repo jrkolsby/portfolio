@@ -1,7 +1,7 @@
 <?
 require("phpQuery.php");
 include("parseDown.php");
-`git pull`
+//`git pull`;
 
 $postDir = "../content/";
 $fileArray = scandir($postDir);
@@ -33,10 +33,28 @@ foreach ($fileArray as $key => $file) {
 				pq("article")->addClass($class);
 			}
 			pq("<div class='inner'/>")->appendTo("article")->append("<div class='info'/>");
-			if (!$postInfo['appearance']['noTitle']) {
+			if (pq("article")->hasClass('background')) {	
+				pq("article")->attr("style", "background: url('content/" . $fileName . ".png') no-repeat scroll center center #fff");
+			} else if (pq("article")->hasClass('side')) {
+				pq("<img/>")->attr("src", "content/" . $fileName . ".png")
+							->insertAfter("div.info");
+			} else if (pq("article")->hasClass('center')) {
+				pq("<img/>")->attr("src", "content/" . $fileName . ".png")
+							->insertBefore("div.info");
+				pq("<br/>")->insertAfter("img");
+			}
+			if (!!$postInfo['appearance']['backgroundGradient']) {
+				pq("article")->attr("style", "background: linear-gradient(to bottom, #" . $postInfo['appearance']['backgroundGradient'][0] . 
+											 " 0%, #" . $postInfo['appearance']['backgroundGradient'][1] . 
+											 " 70%) repeat scroll 0% 0% transparent");
+			}
+			if (!!$postInfo['title']) {
 				$title = $postInfo['title'];
 				pq("<h1/>")->appendTo("article .inner .info")
 						   ->html($title);
+				if (!!$postInfo['appearance']['titleColor']) {
+					pq(".info h1")->attr("style", "color: #" . $postInfo['appearance']['titleColor'] . ";");
+				}
 			}
 			$tag = $postInfo['tag'];
 			pq("<h2/>")->appendTo("article .inner .info")
@@ -45,23 +63,29 @@ foreach ($fileArray as $key => $file) {
 				pq("<a/>")->attr("href", $link['url'])
 							   ->append(pq("<button/>")->html($link['name']))
 							   ->appendTo("article .inner .info");
+				if (!!$postInfo['appearance']['buttonColor']) {
+					pq("a button")->attr("style", "border: 2.5px solid #" . $postInfo['appearance']['buttonColor'] .
+										 "; color: #" . $postInfo['appearance']['buttonColor'] . ";");
+				}
 			}
 			$post['object'] = $articleObject;
 		} else {
+			//Make post
 			$parse = $parseDown->text(file_get_contents($path));
 			$articleObject = phpQuery::newDocument("<article/>");
 			pq("article")->append($parse);
 			pq("article h1")->wrap(pq("<div/>")
-							->attr("style", "background: url('../content/" . $fileName . ".png')"));
+							->attr("style", "background: url('content/" . $fileName . ".png')"));
 			pq("article p")->wrap("<div/>");
 			$isFilm = false;
 			foreach (pq("ul li a") as $key => $link) {
 				$name = pq($link)->html();
 				$url = pq($link)->attr("href");
-				if (strpos(strtolower($name), "video") !== false) {
+				if (strpos(strtolower($name), "film") !== false) {
 					$isFilm = true;
 				}
-				pq("article div:last")->append(pq("<a/>")->attr("href", $url)->append(pq("<button/>")->html($name)));
+				pq("article div:last")->append(pq("<a/>")->attr("href", $url)
+														 ->append(pq("<button/>")->html($name)));
 			}
 			pq("article ul")->remove();
 			if ($isFilm) {
@@ -76,12 +100,48 @@ foreach ($fileArray as $key => $file) {
 		array_push($posts, $post);
 	}
 }
-/*
-foreach ($posts as $key => $post) {
-	print($post['object']);
-}
-*/
 $updatedPostLog = json_encode($postLog);
 file_put_contents("postlog.json", $updatedPostLog);
+function comparePosts($a, $b) {
+    if ($a['date'] == $b['date']) {
+        return 0;
+    }
+    return ($a['date'] < $b['date']) ? -1 : 1;
+}
+usort($posts, "comparePosts");
 $template = phpQuery::newDocumentFileHTML('template.html');
+$partSection = array();
+$shouldAppendPartSection;
+foreach ($posts as $key => $post) {
+	switch ($post['type']) {
+		case 1:
+			pq("main")->append($post['object']);
+			break;
+		case 2:
+			array_unshift($partSection, $post);
+			break;
+		default:
+			array_push($partSection, $post);
+			break;
+	}
+	if (!empty($partSection) &&
+		$key == count($posts)-1) {
+		$shouldAppendPartSection = true;
+	} else if ($posts[$key+1]['type'] == 1) {
+		$shouldAppendPartSection = true;
+	} else {
+		$shouldAppendPartSection = false;
+	}
+	if ($shouldAppendPartSection) {
+		pq("<section/>")->addClass("part")
+						->append(pq("<div/>")->addClass("wrap"))
+						->appendTo("main");
+		foreach ($partSection as $partPost) {
+			pq("section.part:last .wrap")->append($partPost['object']);
+		}
+		unset($partSection);
+		$partSection = array();
+	}
+}
+file_put_contents("../index.html", $template);
 ?>

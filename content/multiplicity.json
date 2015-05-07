@@ -4,13 +4,13 @@
             "background",
             "light"
         ],
-        "backgroundRepeat": false,
-        "noTitle": false,
         "titleColor": "508BFA",
-        "buttonColor": false
+        "titleAlign": false,
+        "buttonColor": false,
+        "backgroundGradient": false
     },
     "title": "Multiplicity",
-    "tag": "The greatest breakthrough in mathematical computation since the abacus, in your browser.",
+    "tag": "The greatest breakthrough in mathematical<br/>computation since the abacus, in your browser.",
     "links": [
         {
             "name": "Webapp",

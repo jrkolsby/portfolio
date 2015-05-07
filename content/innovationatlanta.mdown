@@ -1,0 +1,7 @@
+Innovation Atlanta
+===
+
+Here's the website I built for a consulting enterprise by the name of **Innovation Atlanta**. Not only the largest but also the most detailed website I have ever built, this project in total took me about a week from start to finish. One thing I had no prior experience with is large amounts of copy to layout on the page. While this may seem to be a fairly trivial obstacle, what made it so difficult is also the reason that the stylesheets for this website were so complex: **the page is responsive**. This was the first responsive website I had ever built, and the results are as rewarding as they were difficult to achieve.
+
+* [Website](http://innovation-atlanta.com/)
+* [Github](https://github.com/jrkolsby/innovationatlanta)

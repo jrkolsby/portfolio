@@ -1,0 +1,7 @@
+AP French Timer
+===
+
+This is just a simple Javascript timer preset with intervals for the AP French exam. Also worth noting is that the website was styled with CSS `@media` queries, meaning that it is responsive. One of the first responsive websites I ever made in fact.
+
+* [Webapp](http://jmkl.co/aptimer/)
+* [Github](https://github.com/jrkolsby/aptimer)

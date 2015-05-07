@@ -1,0 +1,25 @@
+{
+    "appearance": {
+        "class": [
+            "center",
+            "light"
+        ],
+        "titleColor": false,
+        "tagColor": "8A8986",
+        "buttonColor": "1BA3DD",
+        "align": false,
+        "backgroundGradient": false
+    },
+    "title": false,
+    "tag": "Going on vacation? Studying for exams? Don't let all of those<br/>beautiful blue links go to waste, use RedditLogger!",
+    "links": [
+        {
+            "name": "Webapp",
+            "url": "http://redditlogger.com/"
+        },
+        {
+            "name": "Github",
+            "url": "https://github.com/jrkolsby/redditlogger"
+        }
+    ]
+}

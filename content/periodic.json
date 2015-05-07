@@ -5,15 +5,16 @@
             "dark"
         ],
         "titleColor": false,
-        "titleAlign": "left",
+        "tagColor": false,
         "buttonColor": false,
+        "align": "left",
         "backgroundGradient": [
             "FDDE94",
             "FA675F"
         ]
     },
-    "title": false,
-    "tag": "Atomic mass, polyatomic ions, charge, and percent composition, all at your fingertips.",
+    "title": "Periodic: Chemical Calculator",
+    "tag": "Atomic mass, polyatomic ions, charge, and percent<br/>composition, all at your fingertips.",
     "links": [
         {
             "name": "App Store",

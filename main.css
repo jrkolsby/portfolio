@@ -341,8 +341,11 @@ article.full .inner .info {
 	vertical-align: middle;
 }
 article.full h1 {
-	font-size: 3.8em;
+	font-size: 3.3em;
 	margin-bottom: 15px;
+}
+article.full h1.long {
+	font-size: 2.2em;
 }
 article.full h2 {
 	font-size: 1.1em;

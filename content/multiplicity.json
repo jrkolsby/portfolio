@@ -5,8 +5,9 @@
             "light"
         ],
         "titleColor": "508BFA",
-        "titleAlign": false,
+        "tagColor": false,
         "buttonColor": false,
+        "align": false,
         "backgroundGradient": false
     },
     "title": "Multiplicity",

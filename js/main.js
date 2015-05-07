@@ -1,10 +1,18 @@
 $(document).ready(function() {
-	$('article.small').each(function(i) {
-		console.log(i);
-		if (i%2 == 0) {
-			$(this).addClass('margin'); //This makes me feel dirty
-		}
+	$('section.part').each(function() { //CSS workaround
+		$(this).children('.wrap')
+			   .children('article.small').each(function(i) {
+			console.log(i);
+			if (i%2 == 0) {
+				$(this).addClass('margin');
+			}
+		});
 	});
+	$('article.full h1').each(function() {
+		if ($(this).html().length > 16) {
+			$(this).addClass('long');
+		}
+	})
 	$('section#about, main').addClass("top");
 	$(window).scroll(function() {
 		if ($(window).scrollTop() > 10 && $("section#about a:last-child").offset().top

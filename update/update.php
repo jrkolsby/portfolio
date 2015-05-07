@@ -48,6 +48,9 @@ foreach ($fileArray as $key => $file) {
 											 " 0%, #" . $postInfo['appearance']['backgroundGradient'][1] . 
 											 " 70%) repeat scroll 0% 0% transparent");
 			}
+			if (!!$postInfo['appearance']['align']) {
+				pq("article .inner .info")->attr("style", "text-align: " . $postInfo['appearance']['align'] . ";");
+			}
 			if (!!$postInfo['title']) {
 				$title = $postInfo['title'];
 				pq("<h1/>")->appendTo("article .inner .info")
@@ -103,10 +106,10 @@ foreach ($fileArray as $key => $file) {
 $updatedPostLog = json_encode($postLog);
 file_put_contents("postlog.json", $updatedPostLog);
 function comparePosts($a, $b) {
-    if ($a['date'] == $b['date']) {
-        return 0;
-    }
-    return ($a['date'] < $b['date']) ? -1 : 1;
+	if ($a['date'] == $b['date']) {
+    	return 0;
+	}
+	return ($a['date'] > $b['date']) ? -1 : 1;
 }
 usort($posts, "comparePosts");
 $template = phpQuery::newDocumentFileHTML('template.html');
@@ -124,10 +127,11 @@ foreach ($posts as $key => $post) {
 			array_push($partSection, $post);
 			break;
 	}
-	if (!empty($partSection) &&
+	if (count($partSection) > 1 &&
 		$key == count($posts)-1) {
 		$shouldAppendPartSection = true;
-	} else if ($posts[$key+1]['type'] == 1) {
+	} else if (!empty($partSection) && 
+			   $posts[$key+1]['type'] == 1) {
 		$shouldAppendPartSection = true;
 	} else {
 		$shouldAppendPartSection = false;
@@ -144,4 +148,5 @@ foreach ($posts as $key => $post) {
 	}
 }
 file_put_contents("../index.html", $template);
+print "very nice!";
 ?>

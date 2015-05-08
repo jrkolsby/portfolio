@@ -147,6 +147,18 @@ foreach ($posts as $key => $post) {
 		$partSection = array();
 	}
 }
+foreach (pq("section.part") as $section) {
+	foreach (pq($section)->children('.wrap')
+						 ->children('article.small') as $key => $small) {
+		if ($key%2 == 0) {
+			pq($small)->addClass('margin');
+		}
+	}
+}
+foreach (pq('article.full h1') as $title) {
+	if (strlen(pq($title)->html()) > 16) {
+		pq($title)->addClass('long');
+	}
+}
 file_put_contents("../index.html", $template);
-print "very nice!";
 ?>

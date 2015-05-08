@@ -12,8 +12,9 @@ foreach ($fileArray as $key => $file) {
 	$path = $postDir . "$file";
 	$ext = pathinfo($path, PATHINFO_EXTENSION);
 	$fileName = pathinfo($path, PATHINFO_FILENAME);
-	if ($ext == "json" || $ext == "mdown") {
-		$postInfo = json_decode(file_get_contents($path), true);
+	if ($ext == "json" || 
+		$ext == "mdown" || 
+		$ext == "md") {
 		$post = array(
 			'filename' => $fileName,
 		);
@@ -24,6 +25,7 @@ foreach ($fileArray as $key => $file) {
 			$postLog[$fileName] = $post['date'];
 		}
 		if ($ext == "json") {
+			$postInfo = json_decode(file_get_contents($path), true);
 			$post['type'] = 1;
 			//Make post
 			$articleObject = phpQuery::newDocument("<article/>");
@@ -72,7 +74,8 @@ foreach ($fileArray as $key => $file) {
 				}
 			}
 			$post['object'] = $articleObject;
-		} else {
+		} else if ($ext == "mdown" ||
+				   $ext == "md") {
 			//Make post
 			$parse = $parseDown->text(file_get_contents($path));
 			$articleObject = phpQuery::newDocument("<article/>");
@@ -161,4 +164,5 @@ foreach (pq('article.full h1') as $title) {
 	}
 }
 file_put_contents("../index.html", $template);
+print "very nice!";
 ?>

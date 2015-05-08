@@ -1,7 +1,7 @@
 <?
 require("phpQuery.php");
 include("parseDown.php");
-//`git pull`;
+`git pull`;
 
 $postDir = "../content/";
 $fileArray = scandir($postDir);

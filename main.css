@@ -507,24 +507,24 @@ article.full.side .inner img {
 
 	/* Buttons maintain hover states */
 	section#about button {
-		margin-bottom: 30px;
+		margin-bottom: 25px;
 	}
 	section#about button#github {
 		background: #4183C4;
 		border: 2.5px solid transparent;
-		box-shadow: 0 -1px 0 #87B8E9, 0 0 8px #000;
+		box-shadow: 0 -1px 0 #87B8E9, 0 0 8px rgba(0,0,0,0.5);
 		color: #fff;
 	}
 	section#about button#vimeo {
 		background: #1ab7ea;
 		border: 2.5px solid transparent;
-		box-shadow: 0 -1px 0 #9BE7FF, 0 0 8px #000;
+		box-shadow: 0 -1px 0 #9BE7FF, 0 0 8px rgba(0,0,0,0.5);
 		color: #fff;
 	}
 	section#about button#dribbble {
 		background: #ea4c89;
 		border: 2.5px solid transparent;
-		box-shadow: 0 -1px 0 #E48CAF, 0 0 8px #000;
+		box-shadow: 0 -1px 0 #E48CAF, 0 0 8px rgba(0,0,0,0.5);
 		color: #fff;
 	}
 

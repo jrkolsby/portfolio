@@ -28,6 +28,7 @@ a {
 }
 article button {
 	font-family: "Montserrat", sans-serif;
+	text-align: ce
 	text-transform: uppercase;
 	padding: 10px 20px;
 	font-size: 1em;
@@ -35,6 +36,7 @@ article button {
 	background: transparent;
 	cursor: pointer;
 	transition: 0.15s all ease-in-out;
+	-webkit-transition: 0.15s all ease-in-out;
 	position: relative;
 }
 article button:hover {
@@ -45,6 +47,7 @@ article button::after {
 	content: "";
 	background: url('assets/icons/arrow-black.png');
 	transition: 0.15s all ease-in-out;
+	-webkit-transition: 0.15s all ease-in-out;
 	width: 8px;
 	height: 12px;
 	position: absolute;
@@ -74,7 +77,7 @@ section#about {
 	position: absolute;
 	top: 0;
 	padding: 10px;
-	height: 100%;
+	height: 200%;
 	min-height: 460px;
 	background: #222527;
 	overflow: hidden;
@@ -168,22 +171,19 @@ section#about {
 	left: -250px;
 	width: 250px;
 }
-#about-back {
-	position: fixed;
-	z-index: -1
-	top: 0;
-	left: 0;
-	background: #222527;
-	height: 100%;
-	width: 250px;
-}
 main {left: 0;}
 section#about, main {
-	transition: 0.3s transform cubic-bezier(0.075, 0.770, 0.560, 1.005);
+	transition: 0.3s transform cubic-bezier(0.075, 0.770, 0.560, 1.005), 
+				0.3s -ms-transform cubic-bezier(0.075, 0.770, 0.560, 1.005), 
+				0.3s -webkit-transform cubic-bezier(0.075, 0.770, 0.560, 1.005);
+	-webkit-transition: 0.3s transform cubic-bezier(0.075, 0.770, 0.560, 1.005), 
+						0.3s -ms-transform cubic-bezier(0.075, 0.770, 0.560, 1.005), 
+						0.3s -webkit-transform cubic-bezier(0.075, 0.770, 0.560, 1.005);
 }
 section#about.top,
 main.top {
 	-webkit-transform: translate(250px,0);
+	-ms-transform: translate(250px,0);
 	transform: translate(250px,0);
 }
 
@@ -238,6 +238,7 @@ section.part article div:first-child {
 	-webkit-transition: .2s height ease-in-out;
 	transition-delay: .2s;
 	-webkit-transition-delay: .2s;
+
 }
 section.part article div:first-child::after {
 	content: '';
@@ -249,8 +250,8 @@ section.part article div:first-child::after {
 	background: #fff;
 	border-radius: 2px;
 	opacity: 0;
-	-webkit-transition: opacity .2s ease-in-out;
 	transition: opacity .2s ease-in-out;
+	-webkit-transition: opacity .2s ease-in-out;
 }
 section.part article.active div:first-child::after,
 section.part article:hover div:first-child::after {
@@ -271,8 +272,8 @@ section.part article div:first-child h1 {
 	position: relative;
 	z-index: 2;
 	opacity: 0;
-	-webkit-transition: opacity .2s ease;
 	transition: opacity .2s ease;
+	-webkit-transition: opacity .2s ease;
 	font-size: 1.8em;
 }
 section.part article:hover div:first-child h1,
@@ -453,6 +454,7 @@ article.full.side .inner img {
 	section#about.top,
 	main.top {
 		-webkit-transform: translate(0,0);
+		-ms-transform: translate(0,0);
 		transform: translate(0,0);
 	}
 	section#about {
@@ -536,6 +538,7 @@ article.full.side .inner img {
 		content: "";
 		background: url('assets/icons/arrow.png');
 		transition: 0.15s all ease-in-out;
+		-webkit-transition: 0.15s all ease-in-out;
 		width: 8px;
 		height: 12px;
 		position: absolute;

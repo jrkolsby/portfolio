@@ -6,7 +6,7 @@ print exec('git pull origin master');
 $postDir = "../content/";
 $fileArray = scandir($postDir);
 $postLog = json_decode(file_get_contents("postlog.json"), true);
-$posts = [];
+$posts = array();
 $parseDown = new Parsedown();
 foreach ($fileArray as $key => $file) {
 	$path = $postDir . "$file";

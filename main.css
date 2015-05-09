@@ -173,17 +173,16 @@ section#about {
 }
 main {left: 0;}
 section#about, main {
-	transition: 0.3s transform cubic-bezier(0.075, 0.770, 0.560, 1.005), 
-				0.3s -ms-transform cubic-bezier(0.075, 0.770, 0.560, 1.005), 
-				0.3s -webkit-transform cubic-bezier(0.075, 0.770, 0.560, 1.005);
-	-webkit-transition: 0.3s transform cubic-bezier(0.075, 0.770, 0.560, 1.005), 
-						0.3s -ms-transform cubic-bezier(0.075, 0.770, 0.560, 1.005), 
-						0.3s -webkit-transform cubic-bezier(0.075, 0.770, 0.560, 1.005);
+	transition: 0.3s transform cubic-bezier(0.075, 0.770, 0.560, 1.005);
+	-o-transition: 0.3s -o-transform cubic-bezier(0.075, 0.770, 0.560, 1.005);
+	-ms-transition: 0.3s -ms-transform cubic-bezier(0.075, 0.770, 0.560, 1.005);	
+	-webkit-transition: 0.3s -webkit-transform cubic-bezier(0.075, 0.770, 0.560, 1.005);
 }
 section#about.top,
 main.top {
 	-webkit-transform: translate(250px,0);
 	-ms-transform: translate(250px,0);
+	-o-transform: translate(250px,0);
 	transform: translate(250px,0);
 }
 

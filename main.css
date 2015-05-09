@@ -28,7 +28,7 @@ a {
 }
 article button {
 	font-family: "Montserrat", sans-serif;
-	text-align: ce
+	text-align: center;
 	text-transform: uppercase;
 	padding: 10px 20px;
 	font-size: 1em;
@@ -103,6 +103,7 @@ section#about button {
 	font-family: 'Montserrat', sans-serif;
 	letter-spacing: 0.3px;
 	text-transform: uppercase;
+	text-align: center;
 	display: block;
 	color: #777;
 	font-size: 16px;

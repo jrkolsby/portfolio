@@ -10,8 +10,8 @@ $posts = array();
 $parseDown = new Parsedown();
 foreach ($fileArray as $key => $file) {
 	$path = $postDir . "$file";
-	$ext = pathinfo($path, PATHINFO_EXTENSION);
-	$fileName = pathinfo($path, PATHINFO_FILENAME);
+	$ext = strtolower(pathinfo($path, PATHINFO_EXTENSION));
+	$fileName = strtolower(pathinfo($path, PATHINFO_FILENAME));
 	if ($ext == "json" || 
 		$ext == "mdown" || 
 		$ext == "md") {

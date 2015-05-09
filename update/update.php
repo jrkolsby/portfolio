@@ -164,5 +164,4 @@ foreach (pq('article.full h1') as $title) {
 	}
 }
 file_put_contents("../index.html", $template);
-print "very nice!";
 ?>

@@ -141,7 +141,7 @@ section#about button {
 	width: 130px;
 	border: 2.5px solid #777;
 	background: transparent;
-	padding: 12px 30px;
+	padding: 12px 0;
 	margin-top: 20px;
 	border-radius: 6px;
 	transition: 0.1s all ease-in-out;
